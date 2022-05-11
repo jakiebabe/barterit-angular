@@ -1,0 +1,43 @@
+<div class="container-fluid bg-dark position-fixed top-0 bottom-0">
+  <div class="container mb-10">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-sm p-3 mb-5 mx-auto d-flex justify-content-center">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+          </mat-card-header>
+          <form class="container mt-2 p-3">
+            <mat-form-field class="container mb-3" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput [formControl]="emailFormControl" placeholder="name@example.com">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="container-sm" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput [formControl]="passwordFormControl" placeholder="Password">
+              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <div class="container d-flex justify-content-center">
+              <a mat-raised-button color="primary" [routerLink]="['/marketplace']">Login</a>
+            </div>
+            <mat-card-subtitle class="d-flex justify-content-center mb-1 mt-3">New user?</mat-card-subtitle>
+            <div class="container d-flex justify-content-center">
+              <a mat-button color="primary" [routerLink]="['/marketplace']">Create Account</a>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
